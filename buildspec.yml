@@ -11,8 +11,7 @@ phases:
       - echo "Zipping deployment package..."
       - zip -r lambda_function.zip lambda_function.py
       - ls
-      - cd lambda_function.zip
-      - cd ..
+      
   post_build:
     commands:
       - echo "Uploading to S3..."
