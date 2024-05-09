@@ -13,7 +13,7 @@ def lambda_handler(event, context):
 
     s3_client = boto3.client('s3')
     sns_client = boto3.client('sns')
-    sns_arn = 'arn:aws:sns:ap-south-1:590183940123:s3-arrival-notification-2'
+    sns_arn = 'arn:aws:sns:ap-south-1:590183940123:DoorDash_notifications'
     source_bucket = event['Records'][0]['s3']['bucket']['name']
     source_key = event['Records'][0]['s3']['object']['key']
     t_one = 0
