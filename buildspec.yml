@@ -11,6 +11,8 @@ phases:
       - echo "Zipping deployment package..."
       - zip -r lambda_function.zip lambda_function.py
       - ls
+      - cd lambda_function.zip
+      - cd ..
   post_build:
     commands:
       - echo "Uploading to S3..."
@@ -18,4 +20,3 @@ phases:
       - echo "Updating Lambda function via S3..."
       - aws lambda update-function-code --function-name DoorDash-19174 --s3-bucket door-dash-project-code-19174 --s3-key lambda_function.zip
       - echo "Deployment complete!!"
-      
